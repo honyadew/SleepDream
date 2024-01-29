@@ -19,6 +19,5 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":feature:record")
 include(":feature:logbook")
-include(":feature:settings")
+include(":core:components")

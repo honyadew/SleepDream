@@ -7,6 +7,9 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
 }
 
+
+
+
 kotlin {
     androidTarget {
         compilations.all {
@@ -38,6 +41,7 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(projects.feature.logbook)
+            implementation(projects.core.components)
 
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -50,6 +54,7 @@ kotlin {
             implementation(compose.desktop.currentOs)
         }
     }
+
 }
 
 android {
@@ -84,11 +89,18 @@ android {
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
     }
+
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.8"
+    }
 }
 
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "MainActivityKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)

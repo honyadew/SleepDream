@@ -35,7 +35,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.honya.record"
+    namespace = "com.honya.logbook"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
